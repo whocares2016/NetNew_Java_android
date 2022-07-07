@@ -1,0 +1,212 @@
+@startuml
+
+title __NETNEW.APP's Class Diagram__\n
+
+  namespace com.example.netnew {
+    class com.example.netnew.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    class com.example.netnew.MainActivity {
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    class com.example.netnew.MyApplication {
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.LoginActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.MainActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.NewsDataDetailActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.OpenActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.PasswordActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.PersonActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.RegisterActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace activity {
+      class com.example.netnew.activity.VideoActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace adapter {
+      class com.example.netnew.adapter.NewsDataAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace bean {
+      class com.example.netnew.bean.NewsDataBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace bean {
+      class com.example.netnew.bean.NewsTitle {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace bean {
+      class com.example.netnew.bean.User {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace fragment {
+      class com.example.netnew.fragment.NewsFragment {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace fragment {
+      class com.example.netnew.fragment.UserFragment {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace util {
+      class com.example.netnew.util.GlideEngine {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace util {
+      class com.example.netnew.util.MySqliteOpenHelper {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace util {
+      class com.example.netnew.util.NetworkReceiver {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace util {
+      class com.example.netnew.util.OkHttpTool {
+      }
+    }
+  }
+  
+
+  namespace com.example.netnew {
+    namespace util {
+      class com.example.netnew.util.SPUtils {
+      }
+    }
+  }
+  
+
+  com.example.netnew.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.MyApplication -up-|> android.app.Application
+  com.example.netnew.activity.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.LoginActivity o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.activity.MainActivity -up-|> android.app.Activity
+  com.example.netnew.activity.MainActivity o-- com.example.netnew.util.NetworkReceiver : mNetReceiver
+  com.example.netnew.activity.NewsDataDetailActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.OpenActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.OpenActivity o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.activity.PasswordActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.PasswordActivity o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.activity.PersonActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.PersonActivity o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.activity.PersonActivity o-- com.example.netnew.bean.User : mUser
+  com.example.netnew.activity.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.activity.RegisterActivity o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.activity.VideoActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.netnew.adapter.NewsDataAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.netnew.bean.NewsTitle o-- com.example.netnew.bean.NewsTitle.Result : result
+  com.example.netnew.bean.User .up.|> java.io.Serializable
+  com.example.netnew.fragment.NewsFragment -up-|> android.app.Fragment
+  com.example.netnew.fragment.NewsFragment o-- com.example.netnew.adapter.NewsDataAdapter : mNewsAdapter
+  com.example.netnew.fragment.UserFragment -up-|> android.app.Fragment
+  com.example.netnew.fragment.UserFragment o-- com.example.netnew.util.MySqliteOpenHelper : helper
+  com.example.netnew.fragment.UserFragment o-- com.example.netnew.bean.User : mUser
+  com.example.netnew.util.GlideEngine .up.|> com.luck.picture.lib.engine.ImageEngine
+  com.example.netnew.util.MySqliteOpenHelper -up-|> android.database.sqlite.SQLiteOpenHelper
+  com.example.netnew.util.NetworkReceiver -up-|> android.content.BroadcastReceiver
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
